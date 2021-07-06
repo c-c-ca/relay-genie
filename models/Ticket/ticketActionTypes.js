@@ -1,0 +1,4 @@
+module.exports = {
+  CREATE_ACCOUNT: 'CREATE_ACCOUNT',
+  CONNECT_ACCOUNT: 'CONNECT_ACCOUNT',
+};
