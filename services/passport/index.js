@@ -18,11 +18,16 @@ const strategies = [
   {
     name: 'facebook',
     module: require('passport-facebook'),
-    options: { profileFields: ['id', 'email'] },
+    options: {
+      profileFields: ['id', 'email'],
+    },
   },
   {
     name: 'twitter',
     module: require('passport-twitter'),
+    options: {
+      includeEmail: true,
+    },
   },
   {
     name: 'linkedin',
