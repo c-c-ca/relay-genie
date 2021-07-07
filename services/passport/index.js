@@ -37,6 +37,10 @@ const strategies = [
       ],
     },
   },
+  {
+    name: 'github',
+    module: require('passport-github2'),
+  },
 ];
 
 strategies.forEach(({ module: { Strategy }, name, options }) =>

@@ -12,8 +12,10 @@ const {
   COOKIE_KEY,
   TWITTER_CONSUMER_KEY,
   TWITTER_CONSUMER_SECRET,
-  LINKEDIN_CONSUMER_KEY,
-  LINKEDIN_CONSUMER_SECRET,
+  LINKEDIN_CLIENT_ID,
+  LINKEDIN_CLIENT_SECRET,
+  GITHUB_CLIENT_ID,
+  GITHUB_CLIENT_SECRET,
 } = process.env;
 
 const google = {
@@ -32,8 +34,13 @@ const twitter = {
 };
 
 const linkedin = {
-  clientID: LINKEDIN_CONSUMER_KEY,
-  clientSecret: LINKEDIN_CONSUMER_SECRET,
+  clientID: LINKEDIN_CLIENT_ID,
+  clientSecret: LINKEDIN_CLIENT_SECRET,
+};
+
+const github = {
+  clientID: GITHUB_CLIENT_ID,
+  clientSecret: GITHUB_CLIENT_SECRET,
 };
 
 const mongo = {
@@ -45,6 +52,7 @@ const mongo = {
 
 module.exports = {
   facebook,
+  github,
   google,
   linkedin,
   twitter,

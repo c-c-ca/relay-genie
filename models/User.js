@@ -5,6 +5,7 @@ const userSchema = new Schema({
   facebookProfile: { profileId: String },
   twitterProfile: { profileId: String },
   linkedinProfile: { profileId: String },
+  githubProfile: { profileId: String },
 });
 
 model('users', userSchema);
