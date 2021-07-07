@@ -32,7 +32,7 @@ const twitter = {
 };
 
 const linkedin = {
-  cliendID: LINKEDIN_CONSUMER_KEY,
+  clientID: LINKEDIN_CONSUMER_KEY,
   clientSecret: LINKEDIN_CONSUMER_SECRET,
 };
 
