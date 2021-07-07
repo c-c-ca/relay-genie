@@ -18,7 +18,7 @@ const strategies = [
 strategies.forEach(({ module: { Strategy }, name }) =>
   passport.use(
     new Strategy(
-      { ...keys[name], callbackURL: `/auth/${name}/callback` },
+      { ...keys[name], callbackURL: `/auth/${name}/callback`, proxy: true },
       async (accessToken, refreshToken, { id: profileId, emails }, done) => {
         const profile = {
           [`${name}Profile`]: { profileId },
