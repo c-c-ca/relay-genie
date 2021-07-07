@@ -9,7 +9,10 @@ const userSchema = new Schema({
     profileId: String,
     email: String,
   },
-  twitterProfile: { profileId: String },
+  twitterProfile: {
+    profileId: String,
+    email: String,
+  },
   linkedinProfile: { profileId: String },
   githubProfile: { profileId: String },
 });
