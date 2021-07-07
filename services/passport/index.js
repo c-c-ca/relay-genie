@@ -33,6 +33,7 @@ const strategies = [
     name: 'linkedin',
     module: require('passport-linkedin-oauth2'),
     options: {
+      scope: ['r_emailaddress', 'r_liteprofile'],
       profileFields: [
         'id',
         'first-name',
