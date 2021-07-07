@@ -11,7 +11,10 @@ passport.deserializeUser(async (id, done) =>
 );
 
 const strategies = [
-  { module: require('passport-google-oauth20'), name: 'google' },
+  {
+    module: require('passport-google-oauth20'),
+    name: 'google',
+  },
   {
     module: require('passport-facebook'),
     name: 'facebook',
