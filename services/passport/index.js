@@ -52,9 +52,11 @@ strategies.forEach(({ module: { Strategy }, name, options }) =>
         callbackURL: `/auth/${name}/callback`,
         proxy: true,
       },
-      async (accessToken, refreshToken, { id: profileId }, done) => {
+      async (accessToken, refreshToken, { id: profileId, emails }, done) => {
+        const [{ value: email }] = emails;
+
         const profileSubdoc = {
-          [`${name}Profile`]: { profileId },
+          [`${name}Profile`]: { profileId, email },
         };
 
         done(
