@@ -13,20 +13,20 @@ passport.deserializeUser(async (id, done) =>
 const strategies = [
   {
     name: 'google',
-    strategy: require('passport-google-oauth20').Strategy,
+    module: require('passport-google-oauth20'),
   },
   {
     name: 'facebook',
-    strategy: require('passport-facebook').Strategy,
+    module: require('passport-facebook'),
     options: { profileFields: ['id', 'email'] },
   },
   {
     name: 'twitter',
-    strategy: require('passport-twitter').Strategy,
+    module: require('passport-twitter'),
   },
   {
     name: 'linkedin',
-    strategy: require('passport-linkedin'),
+    module: require('passport-linkedin-oauth2'),
     options: {
       profileFields: [
         'id',
@@ -39,7 +39,7 @@ const strategies = [
   },
 ];
 
-strategies.forEach(({ strategy: Strategy, name, options }) =>
+strategies.forEach(({ module: { Strategy }, name, options }) =>
   passport.use(
     new Strategy(
       {
