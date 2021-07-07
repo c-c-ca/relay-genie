@@ -17,7 +17,10 @@ const userSchema = new Schema({
     profileId: String,
     email: String,
   },
-  githubProfile: { profileId: String },
+  githubProfile: {
+    profileId: String,
+    email: String,
+  },
 });
 
 model('users', userSchema);
