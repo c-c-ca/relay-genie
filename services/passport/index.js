@@ -12,13 +12,17 @@ passport.deserializeUser(async (id, done) =>
 
 const strategies = [
   {
-    module: require('passport-google-oauth20'),
     name: 'google',
+    module: require('passport-google-oauth20'),
   },
   {
-    module: require('passport-facebook'),
     name: 'facebook',
+    module: require('passport-facebook'),
     options: { profileFields: ['id', 'email'] },
+  },
+  {
+    name: 'twitter',
+    module: require('passport-twitter'),
   },
 ];
 
@@ -32,14 +36,14 @@ strategies.forEach(({ module: { Strategy }, name, options }) =>
         proxy: true,
       },
       async (accessToken, refreshToken, { id: profileId }, done) => {
-        const profileField = {
+        const profileSubdoc = {
           [`${name}Profile`]: { profileId },
         };
 
         done(
           null,
-          (await User.findOne(profileField)) ||
-            (await new User(profileField).save())
+          (await User.findOne(profileSubdoc)) ||
+            (await new User(profileSubdoc).save())
         );
       }
     )

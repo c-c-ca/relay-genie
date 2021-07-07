@@ -10,6 +10,8 @@ const {
   MONGO_CLUSTER,
   MONGO_DATABASE,
   COOKIE_KEY,
+  TWITTER_CONSUMER_KEY,
+  TWITTER_CONSUMER_SECRET,
 } = process.env;
 
 const google = {
@@ -22,6 +24,11 @@ const facebook = {
   clientSecret: FACEBOOK_CLIENT_SECRET,
 };
 
+const twitter = {
+  consumerKey: TWITTER_CONSUMER_KEY,
+  consumerSecret: TWITTER_CONSUMER_SECRET,
+};
+
 const mongo = {
   username: MONGO_USERNAME,
   password: MONGO_PASSWORD,
@@ -32,6 +39,7 @@ const mongo = {
 module.exports = {
   google,
   facebook,
+  twitter,
   mongoURI: toMongoURI(mongo),
   cookieKey: COOKIE_KEY,
 };
