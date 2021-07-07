@@ -22,10 +22,10 @@ strategies.forEach(({ module: { Strategy }, name }) =>
       async (
         accessToken,
         refreshToken,
-        { id: profileId, ...profile },
+        { id: profileId, ...profileInfo },
         done
       ) => {
-        console.log(profile);
+        console.log(profileInfo);
         const profile = {
           [`${name}Profile`]: { profileId },
         };
