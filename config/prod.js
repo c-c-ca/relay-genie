@@ -12,6 +12,8 @@ const {
   COOKIE_KEY,
   TWITTER_CONSUMER_KEY,
   TWITTER_CONSUMER_SECRET,
+  LINKEDIN_CONSUMER_KEY,
+  LINKEDIN_CONSUMER_SECRET,
 } = process.env;
 
 const google = {
@@ -29,6 +31,11 @@ const twitter = {
   consumerSecret: TWITTER_CONSUMER_SECRET,
 };
 
+const linkedin = {
+  consumerKey: LINKEDIN_CONSUMER_KEY,
+  consumerSecret: LINKEDIN_CONSUMER_SECRET,
+};
+
 const mongo = {
   username: MONGO_USERNAME,
   password: MONGO_PASSWORD,
@@ -37,8 +44,9 @@ const mongo = {
 };
 
 module.exports = {
-  google,
   facebook,
+  google,
+  linkedin,
   twitter,
   mongoURI: toMongoURI(mongo),
   cookieKey: COOKIE_KEY,

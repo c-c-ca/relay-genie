@@ -24,6 +24,19 @@ const strategies = [
     name: 'twitter',
     module: require('passport-twitter'),
   },
+  {
+    name: 'linkedin',
+    module: require('passport-linkedin'),
+    options: {
+      profileFields: [
+        'id',
+        'first-name',
+        'last-name',
+        'email-address',
+        'headline',
+      ],
+    },
+  },
 ];
 
 strategies.forEach(({ module: { Strategy }, name, options }) =>
