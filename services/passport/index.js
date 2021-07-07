@@ -12,27 +12,31 @@ passport.deserializeUser(async (id, done) =>
 
 const strategies = [
   { module: require('passport-google-oauth20'), name: 'google' },
-  { module: require('passport-facebook'), name: 'facebook' },
+  {
+    module: require('passport-facebook'),
+    name: 'facebook',
+    options: { profileFields: ['id', 'email'] },
+  },
 ];
 
-strategies.forEach(({ module: { Strategy }, name }) =>
+strategies.forEach(({ module: { Strategy }, name, options }) =>
   passport.use(
     new Strategy(
-      { ...keys[name], callbackURL: `/auth/${name}/callback`, proxy: true },
-      async (
-        accessToken,
-        refreshToken,
-        { id: profileId, ...profileInfo },
-        done
-      ) => {
-        console.log(profileInfo);
-        const profile = {
+      {
+        ...keys[name],
+        ...options,
+        callbackURL: `/auth/${name}/callback`,
+        proxy: true,
+      },
+      async (accessToken, refreshToken, { id: profileId }, done) => {
+        const profileField = {
           [`${name}Profile`]: { profileId },
         };
 
         done(
           null,
-          (await User.findOne(profile)) || (await new User(profile).save())
+          (await User.findOne(profileField)) ||
+            (await new User(profileField).save())
         );
       }
     )
