@@ -5,7 +5,10 @@ const userSchema = new Schema({
     profileId: String,
     email: String,
   },
-  facebookProfile: { profileId: String },
+  facebookProfile: {
+    profileId: String,
+    email: String,
+  },
   twitterProfile: { profileId: String },
   linkedinProfile: { profileId: String },
   githubProfile: { profileId: String },
