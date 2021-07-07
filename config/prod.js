@@ -32,8 +32,8 @@ const twitter = {
 };
 
 const linkedin = {
-  consumerKey: LINKEDIN_CONSUMER_KEY,
-  consumerSecret: LINKEDIN_CONSUMER_SECRET,
+  cliendID: LINKEDIN_CONSUMER_KEY,
+  clientSecret: LINKEDIN_CONSUMER_SECRET,
 };
 
 const mongo = {
