@@ -1,0 +1,3 @@
+export const TOGGLE_SIDENAV = 'TOGGLE_SIDENAV';
+export const SET_SETTINGS_VIEW = 'SET_SETTINGS_VIEW';
+export const FETCH_USER = 'FETCH_USER';

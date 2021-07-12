@@ -1,0 +1,16 @@
+.submit-error {
+  --submit-error-background-color: hsl(10, 90%, 45%);
+
+  color: var(--submit-error-background-color);
+  border: 1px solid var(--submit-error-background-color);
+  background-color: hsla(10, 90%, 75%, 0.1);
+
+  font-size: 1.5rem;
+  font-weight: 700;
+
+  border-radius: 0.8rem;
+
+  width: 100%;
+  padding: 1.5rem 1.5rem;
+  margin-bottom: 2rem;
+}

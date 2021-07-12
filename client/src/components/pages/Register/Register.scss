@@ -1,0 +1,149 @@
+@import '../../../sass/abstracts/variables';
+
+.register {
+  min-height: 100vh;
+  min-width: 100vw;
+  padding: 3rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  --color-primary-light: #fc00ff;
+  --color-primary-dark: #00dbde;
+
+  background: var(--color-primary-dark); /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top left,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top left,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  @media only screen and (max-width: $bp-smallest) {
+    padding: 1rem;
+  }
+
+  &__logo {
+    color: #fff;
+    margin-right: auto;
+    margin-bottom: 0.5rem;
+  }
+
+  &__header {
+    color: #fff;
+    font-size: 3.5rem;
+    font-weight: 300;
+    letter-spacing: 0.05rem;
+    margin-bottom: 2rem;
+    text-shadow: 0.5rem 0.5rem 3rem hsla(20, 40%, 95%, 0.5);
+    max-width: 40rem;
+    text-align: center;
+    line-height: normal;
+
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__content {
+    --register-content-font-color: var(--color-primary-light);
+
+    --register-content-inner-border: 1px solid hsl(10, 10%, 80%);
+
+    --register-border-radius: 1rem;
+
+    background-color: $color-grey-light-1;
+    color: var(--register-content-font-color);
+
+    font-size: 1.5rem;
+
+    width: 72.5rem;
+    border-radius: var(--register-border-radius);
+
+    display: flex;
+    justify-content: space-between;
+
+    @media only screen and (max-width: $bp-medium) {
+      width: 100%;
+      flex-direction: column;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      // background-color: red;
+    }
+  }
+
+  &__feature-section {
+    width: 55%;
+    padding: 4rem;
+
+    @media only screen and (max-width: $bp-medium) {
+      width: 100%;
+      padding: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      padding: 2rem;
+    }
+  }
+
+  &__feature {
+    padding: 2rem 0;
+    border-bottom: var(--register-content-inner-border);
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+  }
+
+  &__feature-header {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__feature-title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-left: 1.5rem;
+
+    @media only screen and (max-width: $bp-smallest) {
+      font-size: 1.8rem;
+      margin-left: 1rem;
+    }
+  }
+
+  &__feature-description {
+    color: rgba(80, 80, 80, 1);
+    padding: 1.5rem 0;
+    line-height: 1.4;
+    letter-spacing: 0.04rem;
+
+    @media only screen and (max-width: $bp-smallest) {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__feature-icon svg {
+    fill: var(--color-primary-light);
+    height: 2.8rem;
+
+    @media only screen and (max-width: $bp-smallest) {
+      height: 2.2rem;
+    }
+  }
+}

@@ -1,8 +1,16 @@
 const passport = require('passport');
 const { model } = require('mongoose');
-const keys = require('../../config/keys');
-
+const LocalStrategy = require('passport-local');
 const User = model('users');
+// const Ticket = model('tickets');
+const keys = require('../../config/keys');
+const strategies = require('./strategies');
+// const { ticketActionTypes } = require('../../models/Ticket');
+// const { findUserByEmail } = require('../../models/utils');
+const configureAuthCallback = require('./authConfig');
+const configureConnectCallback = require('./connectConfig');
+
+passport.use(new LocalStrategy(User.authenticate()));
 
 passport.serializeUser(({ id }, done) => done(null, id));
 
@@ -10,67 +18,5 @@ passport.deserializeUser(async (id, done) =>
   done(null, await User.findById(id))
 );
 
-const strategies = [
-  {
-    name: 'google',
-    module: require('passport-google-oauth20'),
-  },
-  {
-    name: 'facebook',
-    module: require('passport-facebook'),
-    options: {
-      profileFields: ['id', 'email'],
-    },
-  },
-  {
-    name: 'twitter',
-    module: require('passport-twitter'),
-    options: {
-      includeEmail: true,
-    },
-  },
-  {
-    name: 'linkedin',
-    module: require('passport-linkedin-oauth2'),
-    options: {
-      scope: ['r_emailaddress', 'r_liteprofile'],
-      profileFields: [
-        'id',
-        'first-name',
-        'last-name',
-        'email-address',
-        'headline',
-      ],
-    },
-  },
-  {
-    name: 'github',
-    module: require('passport-github2'),
-  },
-];
-
-strategies.forEach(({ module: { Strategy }, name, options }) =>
-  passport.use(
-    new Strategy(
-      {
-        ...keys[name],
-        ...options,
-        callbackURL: `/auth/${name}/callback`,
-        proxy: true,
-      },
-      async (accessToken, refreshToken, { id: profileId, emails }, done) => {
-        const [{ value: email }] = emails;
-
-        const profileSubdoc = {
-          [`${name}Profile`]: { profileId, email },
-        };
-
-        done(
-          null,
-          (await User.findOne(profileSubdoc)) ||
-            (await new User(profileSubdoc).save())
-        );
-      }
-    )
-  )
-);
+strategies.forEach(configureAuthCallback);
+strategies.forEach(configureConnectCallback);

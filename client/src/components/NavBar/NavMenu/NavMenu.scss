@@ -1,0 +1,60 @@
+@import '../../../sass/abstracts/variables';
+
+.navmenu {
+  display: flex;
+  list-style-type: none;
+
+  &__item {
+    padding: 1.5rem 2rem;
+    color: $color-primary-dark;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    position: relative;
+    display: block;
+    transition: all 0.2s;
+
+    &:hover,
+    &:active,
+    &:focus {
+      cursor: pointer;
+
+      background-color: $color-grey-light-2;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 0;
+      width: 100%;
+      background-color: $color-primary;
+      transform: scaleX(0.1);
+      transform-origin: bottom center;
+      transition: height 0.1s ease-in,
+        transform 0.2s cubic-bezier(1, 0, 0, 1) 0.1s;
+    }
+
+    &:hover::before,
+    &:active::before,
+    &:focus::before {
+      transform: scaleX(1);
+      height: 0.3rem;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    display: block;
+  }
+
+  &__item:hover &__link,
+  &__item:active &__link,
+  &__item:focus &__link {
+    color: $color-primary;
+  }
+}

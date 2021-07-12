@@ -1,0 +1,19 @@
+.alert-card {
+  &__icon-wrapper {
+    &--check {
+      transform: scale(5.5) translate(0.1rem, 0.2rem);
+
+      & svg {
+        fill: hsl(140, 65%, 55%);
+      }
+    }
+
+    &--check-shadow {
+      transform: scale(5.5) translate(-0.1rem, -0.2rem);
+
+      & svg {
+        fill: hsla(140, 65%, 55%, 0.15);
+      }
+    }
+  }
+}

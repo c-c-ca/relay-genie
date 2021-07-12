@@ -1,0 +1,51 @@
+.u-margin-top-small {
+  margin-top: 2.5rem !important;
+
+  @media only screen and (max-width: $bp-largest) {
+    margin-top: 1.7rem !important;
+  }
+}
+
+.u-margin-top-medium {
+  margin-top: 3.5rem !important;
+
+  @media only screen and (max-width: $bp-largest) {
+    margin-top: 2.7rem !important;
+  }
+}
+
+.u-margin-top-large {
+  margin-top: 4.5rem !important;
+
+  @media only screen and (max-width: $bp-largest) {
+    margin-top: 3.7rem !important;
+  }
+}
+
+.u-margin-x-auto {
+  margin: 0 auto;
+}
+
+.u-icon-red {
+  & svg {
+    fill: $color-red;
+  }
+}
+
+.u-icon-green {
+  & svg {
+    fill: $color-green;
+  }
+}
+
+.u-icon-yellow {
+  & svg {
+    fill: $color-yellow;
+  }
+}
+
+.u-icon-blue {
+  & svg {
+    fill: $color-blue;
+  }
+}

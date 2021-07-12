@@ -1,0 +1,55 @@
+@import '../../../../sass/abstracts/variables';
+
+.settings-menu {
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+
+  @media only screen and (max-width: $bp-large) {
+    width: 15rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    display: none;
+  }
+
+  &__item {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-align: left;
+    background-color: inherit;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    font-weight: 700;
+    font-size: 1.3rem;
+    padding: 1.3rem 0 1.3rem 2.3rem;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    color: $color-primary-dark;
+
+    @media only screen and (max-width: $bp-large) {
+      font-size: 1.1rem;
+      padding: 1.1rem 0 1.1rem 2rem;
+    }
+
+    &:hover {
+      background-color: rgba($color-primary-dark, 0.5);
+      color: $color-grey-light-1;
+    }
+
+    &--active,
+    &--active:hover {
+      background-color: $color-primary-dark;
+      color: $color-grey-light-1;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+
+      @media only screen and (max-width: $bp-large) {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+}

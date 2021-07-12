@@ -1,0 +1,222 @@
+@import '../../../sass/abstracts/variables';
+
+.button {
+  padding: 1rem 2.5rem;
+  display: inline-block;
+  max-width: 23rem;
+
+  border-radius: 2px;
+  outline: none;
+
+  font-family: inherit;
+  font-size: 1.2rem;
+  letter-spacing: 0.17rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  transition: all 0.2s;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 1rem 2rem;
+
+    font-size: 1rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    padding: 1rem 2rem;
+
+    font-size: 1rem;
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 3rem;
+
+    svg {
+      height: 1.8rem;
+    }
+
+    fill: $color-white;
+  }
+
+  &--yellow &__icon {
+    fill: $color-yellow;
+  }
+
+  &--red-dark &__icon {
+    fill: $color-red;
+  }
+
+  &--primary {
+    color: $color-white;
+    background-color: $color-primary;
+    border: 1px solid $color-primary;
+
+    box-shadow: inset -0em 0 0 0 $color-primary, inset 0em 0 0 0 $color-primary,
+      0 1rem 2rem rgba(0, 0, 0, 0.15);
+
+    &:hover,
+    &:focus {
+      color: $color-primary;
+    }
+  }
+
+  &--purple {
+    color: $color-white;
+    background-color: $color-purple;
+    border: 1px solid $color-purple;
+
+    box-shadow: inset -0em 0 0 0 $color-purple, inset 0em 0 0 0 $color-purple,
+      0 1rem 2rem rgba(0, 0, 0, 0.15);
+
+    &:hover,
+    &:focus {
+      color: $color-purple;
+    }
+  }
+
+  &--red {
+    color: $color-white;
+    background-color: $color-red;
+    border: 1px solid $color-red;
+
+    box-shadow: inset -0em 0 0 0 $color-red, inset 0em 0 0 0 $color-red,
+      0 1rem 2rem rgba(0, 0, 0, 0.15);
+
+    &:hover,
+    &:focus {
+      color: $color-red;
+    }
+  }
+
+  &--red-dark {
+    color: $color-red;
+    background-color: $color-grey-dark-3;
+    border: 1px solid $color-grey-dark-3;
+
+    box-shadow: inset -0em 0 0 0 $color-grey-dark-3,
+      inset 0em 0 0 0 $color-grey-dark-3, 0 1rem 2rem rgba(0, 0, 0, 0.15);
+
+    &:hover,
+    &:focus {
+      color: $color-grey-dark-3;
+    }
+  }
+
+  &--yellow {
+    color: $color-grey-dark-3;
+    background-color: $color-yellow;
+    border: 1px solid $color-yellow;
+
+    box-shadow: inset -0em 0 0 0 $color-yellow, inset 0em 0 0 0 $color-yellow,
+      0 1rem 2rem rgba(0, 0, 0, 0.15);
+
+    &:hover,
+    &:focus {
+      color: $color-yellow;
+    }
+  }
+
+  &--yellow {
+    color: $color-yellow;
+    background-color: $color-grey-dark-3;
+    border: 1px solid $color-grey-dark-3;
+
+    box-shadow: inset -0em 0 0 0 $color-grey-dark-3,
+      inset 0em 0 0 0 $color-grey-dark-3, 0 1rem 2rem rgba(0, 0, 0, 0.15);
+
+    &:hover,
+    &:focus {
+      color: $color-grey-dark-3;
+    }
+  }
+
+  &--grey {
+    color: $color-purple;
+    background-color: $color-white;
+    border: 1px solid $color-purple;
+
+    box-shadow: inset -0em 0 0 0 $color-white, inset 0em 0 0 0 $color-white,
+      0 1rem 2rem rgba(0, 0, 0, 0.1);
+
+    &:hover,
+    &:focus {
+      color: $color-white;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-decoration: none;
+    width: 100%;
+  }
+
+  &:hover &__icon {
+    &--primary {
+      fill: $color-primary;
+    }
+    &--purple {
+      fill: $color-purple;
+    }
+    &--red {
+      fill: $color-red;
+    }
+    &--yellow,
+    &--red-dark {
+      fill: $color-grey-dark-3;
+    }
+    &--grey {
+      fill: $color-purple;
+    }
+  }
+
+  &__text {
+    width: 100%;
+    padding-left: 0.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    box-shadow: inset -11.5rem 0 0 0 $color-grey-light-1,
+      inset 11.5rem 0 0 0 $color-grey-light-1, 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  }
+
+  &--grey {
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      box-shadow: inset -11.5rem 0 0 0 $color-purple,
+        inset 11.5rem 0 0 0 $color-purple, 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &--yellow {
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      box-shadow: inset -11.5rem 0 0 0 $color-yellow,
+        inset 11.5rem 0 0 0 $color-yellow, 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &--red-dark {
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      box-shadow: inset -11.5rem 0 0 0 $color-red,
+        inset 11.5rem 0 0 0 $color-red, 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    }
+  }
+}

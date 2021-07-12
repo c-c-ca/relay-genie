@@ -1,0 +1,85 @@
+@import '../../sass/abstracts/variables';
+
+.success {
+  color: $color-grey-dark-3;
+  font-family: 'Open Sans', sans-serif;
+  backface-visibility: hidden;
+  overflow: hidden;
+
+  &__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15rem;
+
+    background: #000000; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right top,
+      #434343,
+      #000000
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right top,
+      #434343,
+      #000000
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+  &__icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(5.5) translate(0.1rem, 0.2rem);
+
+    &--cross {
+      position: absolute;
+      top: 0.3rem;
+      right: 0.3rem;
+      transform: scale(0.8);
+
+      & svg {
+        height: 3rem;
+        width: 3rem;
+        fill: $color-grey-light-1;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &--check {
+      & svg {
+        fill: hsl(140, 65%, 55%);
+      }
+    }
+
+    &--check-shadow {
+      transform: scale(5.5) translate(-0.1rem, -0.2rem);
+
+      & svg {
+        fill: hsla(140, 65%, 55%, 0.15);
+      }
+    }
+  }
+
+  &__content {
+    background-color: $color-white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 3rem;
+  }
+
+  &__title {
+    font-size: 4.2rem;
+  }
+
+  &__message {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 2rem 2rem 3rem;
+    line-height: 1.4;
+  }
+}

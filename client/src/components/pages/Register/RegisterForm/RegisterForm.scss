@@ -1,0 +1,166 @@
+@import '../../../../sass/abstracts/variables';
+
+.register-form-container {
+  --register-form-background-color: hsl(20, 40%, 100%);
+  --register-form-font-color: hsl(0, 96%, 45%);
+
+  --register-form-inner-border: 1px solid hsl(10, 10%, 80%);
+
+  background-color: var(--register-form-background-color);
+
+  position: relative;
+  top: 0;
+  left: 1rem;
+  margin: 2rem 0;
+  border-radius: var(--register-border-radius);
+  box-shadow: -0.5rem 0 1.5rem rgba(0, 0, 0, 0.3);
+  width: 55%;
+  overflow: hidden;
+
+  /* color: var(--register-form-font-color);
+      
+	font-size: 1.5rem;
+      
+	width: 70rem;
+	padding: 5rem;
+	border-radius: 1rem;
+      
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%); */
+
+  @media only screen and (max-width: $bp-medium) {
+    width: 97%;
+    left: 1.5%;
+    margin: 1rem 0;
+  }
+}
+
+.register-form-wrapper {
+  padding: 3rem 3rem 0;
+  background-color: inherit;
+
+  @media only screen and (max-width: $bp-medium) {
+    margin: 0 auto;
+    max-width: 40rem;
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    padding: 3rem 1.5rem 0;
+  }
+}
+
+.register-form {
+  /* padding: 4rem 0; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.submit-button {
+  background-image: linear-gradient(
+    to right bottom,
+    hsl(282, 34%, 45%),
+    hsl(297, 62%, 57%)
+  );
+  color: #fff;
+
+  font-size: 1.8rem;
+  font-weight: 100;
+
+  width: 100%;
+  padding: 1.2rem 0;
+  margin: 1rem 0;
+
+  border-radius: 0.8rem;
+  border: none;
+  outline: none;
+
+  position: relative;
+
+  @media only screen and (max-width: $bp-smallest) {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    padding: 1rem 0;
+  }
+}
+
+:not(.submit-button--disabled).submit-button:hover {
+  background-image: linear-gradient(
+    to right bottom,
+    hsl(282, 34%, 55%),
+    hsl(297, 62%, 67%)
+  );
+
+  cursor: pointer;
+}
+
+.submit-button--disabled {
+  background-image: linear-gradient(
+    to right bottom,
+    hsl(282, 34%, 60%),
+    hsl(297, 62%, 72%)
+  );
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.submit-error {
+  /* background-color: var(--submit-error-background-color);
+	color: #fff; */
+
+  --submit-error-background-color: hsl(10, 90%, 45%);
+
+  color: var(--submit-error-background-color);
+  border: 1px solid var(--submit-error-background-color);
+  background-color: hsla(10, 90%, 75%, 0.1);
+
+  font-size: 1.5rem;
+  font-weight: 700;
+
+  border-radius: 0.8rem;
+
+  width: 100%;
+  padding: 1.5rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.loader-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.third-party-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: var(--register-form-inner-border);
+  margin-top: 2.5rem;
+
+  &__header {
+    background-color: var(--register-form-background-color);
+    transform: translateY(-50%);
+    text-align: center;
+    padding: 0 1.5rem;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 1rem;
+  }
+
+  &__container {
+    margin: 3rem 0 4rem;
+    width: 100%;
+
+    & > * {
+      margin-bottom: 1rem;
+    }
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

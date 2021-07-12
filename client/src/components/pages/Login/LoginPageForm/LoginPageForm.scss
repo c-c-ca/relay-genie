@@ -1,0 +1,61 @@
+@import '../../../../sass/abstracts/variables';
+
+.login-page-form {
+  --login-form-background-color: hsl(20, 40%, 95%);
+  --login-form-bottom-panel-background-color: hsl(10, 20%, 90%);
+  --login-form-inner-border: 1px solid hsl(10, 10%, 80%);
+
+  --header-color: hsl(20, 90%, 40%);
+  --header-text-shadow-color: hsla(20, 90%, 40%, 0.6);
+  --sign-up-color: rgba(0, 0, 0, 0.6);
+  --sign-up-link-color: hsl(20, 95%, 50%);
+  --forgot-password-link-color: hsl(20, 90%, 50%);
+  --forgot-password-link-hover-color: hsl(20, 95%, 60%);
+
+  --submit-error-background-color: hsl(10, 80%, 45%);
+  background-color: inherit;
+}
+
+.forgot-password-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0.5rem 0 4rem;
+  background-color: inherit;
+}
+
+.forgot-password,
+.forgot-password:link,
+.forgot-password:visited,
+.forgot-password:active {
+  color: $color-primary;
+  font-size: 1.4rem;
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  color: rgba($color-primary, 0.8);
+  cursor: pointer;
+}
+
+.SubmitError {
+  background-color: var(--submit-error-background-color);
+  color: #fff;
+
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-align: center;
+
+  border-radius: 0.8rem;
+
+  width: 100%;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+}
+
+.LoaderWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

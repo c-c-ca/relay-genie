@@ -1,0 +1,134 @@
+@import '../../../../sass/abstracts/variables';
+
+.social-button {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.08rem;
+  font-size: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  transition: all 0.3s;
+  height: 5.5rem;
+  overflow: hidden;
+
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+    transform: scale(1.01);
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.35);
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    font-size: 1.3rem;
+    height: 5rem;
+  }
+
+  &--google {
+    background-color: hsl(220, 90%, 55%);
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: hsl(220, 90%, 60%);
+    }
+
+    & svg {
+      height: 2.3rem;
+      width: 2.3rem;
+    }
+  }
+
+  &--facebook {
+    background-color: hsl(221, 44%, 41%);
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: hsl(221, 44%, 51%);
+    }
+
+    & svg {
+      height: 3.3rem;
+      width: 3.3rem;
+    }
+  }
+
+  &--github {
+    background-color: hsl(0, 3%, 23%);
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: hsl(0, 3%, 33%);
+    }
+
+    & svg {
+      height: 3rem;
+      width: 3rem;
+    }
+  }
+
+  &--twitter {
+    background-color: hsl(203, 89%, 53%);
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: hsl(203, 89%, 63%);
+    }
+
+    & svg {
+      height: 3rem;
+      width: 3rem;
+    }
+  }
+
+  &__icon {
+    &--google {
+      padding: 1.1rem 1.3rem;
+
+      margin-left: 0.3rem;
+      border-radius: 1rem;
+
+      background-color: #fff;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &--github {
+      height: 3rem;
+      width: 3rem;
+      margin-left: 1rem;
+      border-radius: 0.5rem;
+      background-color: inherit;
+    }
+
+    &--facebook {
+      height: 3.3rem;
+      width: 3.3rem;
+      margin-left: 1rem;
+      border-radius: 0.5rem;
+    }
+
+    &--twitter {
+      margin-left: 1.5rem;
+      border-radius: 1rem;
+    }
+  }
+
+  &__text {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0 auto;
+  }
+
+  &--disabled,
+  &--disabled:hover {
+    background-color: hsl(0, 0%, 60%);
+  }
+}

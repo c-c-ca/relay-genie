@@ -1,6 +1,9 @@
 const { Schema, model } = require('mongoose');
+const passportLocalMongoose = require('passport-local-mongoose');
 
 const userSchema = new Schema({
+  email: String,
+  displayName: String,
   googleProfile: {
     profileId: String,
     email: String,
@@ -21,6 +24,11 @@ const userSchema = new Schema({
     profileId: String,
     email: String,
   },
+  localProfile: {
+    email: String,
+  },
 });
+
+userSchema.plugin(passportLocalMongoose);
 
 model('users', userSchema);

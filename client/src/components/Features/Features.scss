@@ -1,0 +1,21 @@
+@import '../../sass/abstracts/variables';
+
+.features {
+  background-color: $color-grey-light-1;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5rem 0;
+
+    @media only screen and (max-width: $bp-largest) {
+      padding: 5rem 2rem;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      flex-direction: column;
+      padding: 0;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@import '../../../sass/abstracts/variables';
+
+.portal-modal {
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 38rem;
+    border-radius: 1rem;
+    overflow: hidden;
+
+    box-shadow: -0.5rem 0 1.5rem rgba(0, 0, 0, 0.2);
+
+    animation: moveInAbove 0.4s ease-out;
+  }
+}

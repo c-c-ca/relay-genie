@@ -1,0 +1,132 @@
+@import '../../../sass/abstracts/variables';
+
+.field-wrapper {
+  width: 100%;
+  margin-bottom: 2.5rem;
+
+  --field-border-radius: 0.8rem;
+
+  overflow: hidden;
+
+  @media only screen and (max-width: $bp-medium) {
+    margin-bottom: 1rem;
+  }
+}
+
+.label {
+  display: inline-block;
+  padding-bottom: 0.8rem;
+
+  color: hsl(310, 30%, 45%);
+
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.08rem;
+
+  @media only screen and (max-width: $bp-large) {
+    font-size: 1.1rem;
+    padding-bottom: 0.6rem;
+  }
+}
+
+.input-wrapper {
+  position: relative;
+  border-radius: var(--field-border-radius);
+
+  --input-border: 1px solid rgba(50, 50, 50, 0.2);
+  --icon-padding: 1.3rem;
+
+  overflow: hidden;
+}
+
+.input {
+  width: 100%;
+  padding: 1.3rem 4.5rem 1.3rem 5.5rem;
+
+  border-radius: var(--field-border-radius);
+  border: var(--input-border);
+  overflow: hidden;
+
+  font-size: 1.5rem;
+
+  transition: all 0.3s;
+
+  &::placeholder {
+    color: $color-grey-dark;
+  }
+
+  &--disabled {
+    background-color: hsl(0, 0%, 95%);
+  }
+
+  &--pristine {
+    color: $color-grey-dark;
+  }
+
+  @media only screen and (max-width: $bp-large) {
+    font-size: 1.3rem;
+    padding: 1.1rem 4.1rem 1.1rem 5.3rem;
+  }
+}
+
+.input:active,
+.input:focus {
+  border: 1px solid rgba($color-primary, 0.4);
+  box-shadow: 0.2rem 0.2rem 0.4rem rgba($color-primary-dark, 0.2);
+
+  outline: none;
+}
+
+.icon-wrapper--left {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+
+  padding: 1.3rem;
+  border-right: var(--input-border);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & svg {
+    fill: $color-primary;
+    transform: scale(0.85);
+  }
+
+  @media only screen and (max-width: $bp-large) {
+    padding: 1.1rem;
+
+    & svg {
+      transform: scale(0.75);
+    }
+  }
+}
+
+.icon-wrapper--right {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+
+  padding: var(--icon-padding);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error {
+  background-color: hsl(0, 43%, 93%);
+  color: hsl(5, 90%, 40%);
+
+  border: 1px solid hsla(0, 94%, 37%, 0.2);
+  border-radius: var(--field-border-radius);
+
+  padding: 0.7rem;
+  margin-top: 0.5rem;
+
+  font-size: 1.1rem;
+  font-weight: 600;
+}

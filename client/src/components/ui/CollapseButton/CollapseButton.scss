@@ -1,0 +1,31 @@
+@import '../../../sass/abstracts/variables';
+
+.collapse-button {
+  border: none;
+  outline: none;
+  background-color: $color-primary-dark;
+  fill: $color-grey-light-1;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  padding: 0.4rem;
+  transition: all 0.3s;
+  box-shadow: 0rem 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
+
+  &:hover {
+    cursor: pointer;
+    background-color: $color-primary;
+  }
+
+  & svg {
+    transition: all 0.3s;
+    height: 1.7rem;
+    width: 1.7rem;
+  }
+
+  &--active svg {
+    transform: rotate(180deg);
+  }
+}

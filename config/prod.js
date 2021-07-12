@@ -50,6 +50,17 @@ const mongo = {
   database: MONGO_DATABASE,
 };
 
+const sendgrid = {
+  key: SENDGRID_KEY,
+  email: SENDGRID_EMAIL,
+};
+
+const sightEngine = {
+  URI: SIGHTENGINE_URI,
+  api_user: SIGHTENGINE_API_USER,
+  api_secret: SIGHTENGINE_API_SECRET,
+};
+
 module.exports = {
   facebook,
   github,
@@ -58,4 +69,6 @@ module.exports = {
   twitter,
   mongoURI: toMongoURI(mongo),
   cookieKey: COOKIE_KEY,
+  sendgrid,
+  sightEngine,
 };
