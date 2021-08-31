@@ -10,15 +10,29 @@ const verifyToken = actionTypes => async (req, res, next) => {
   if (!ticket || !actionTypes.includes(ticket.action))
     return res.send({ error: 'No ticket exists for the given token' });
 
-  const { strategy, email, action, profileId, displayName } = ticket;
+  const { strategy, email, action, profileId, firstName, lastName, photo } =
+    ticket;
 
-  req.body = { ...req.body, strategy, email, action, profileId, displayName };
+  req.body = {
+    ...req.body,
+    strategy,
+    email,
+    action,
+    profileId,
+    firstName,
+    lastName,
+    photo,
+  };
 
   next();
 };
 
 const uniqueUsername = async (req, res, next) => {
   const { username } = req.body;
+
+  if (req.user && req.user.username == username) {
+    return next();
+  }
 
   if (await User.findOne({ username })) {
     return res.send({ error: 'Username has already been taken.' });
@@ -35,4 +49,12 @@ const validateUsername = async (req, res, next) => {
   next();
 };
 
-module.exports = { verifyToken, uniqueUsername, validateUsername };
+const loggedIn = (req, res, next) => {
+  if (req.user) {
+    next();
+  } else {
+    res.redirect('/login');
+  }
+};
+
+module.exports = { verifyToken, uniqueUsername, validateUsername, loggedIn };

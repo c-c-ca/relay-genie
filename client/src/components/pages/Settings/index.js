@@ -8,10 +8,10 @@ import AccountView from './SettingsDashboard/AccountView';
 import PasswordView from './SettingsDashboard/PasswordView';
 
 const views = {
-  account: <AccountView />,
-  password: <PasswordView />,
-  events: <h1>Events View</h1>,
-  notifications: <h1>Notifications View</h1>,
+  account: AccountView,
+  password: PasswordView,
+  // events: <h1>Events View</h1>,
+  // notifications: <h1>Notifications View</h1>,
 };
 
 const Settings = props => (
@@ -21,7 +21,7 @@ const Settings = props => (
         <h1 className="settings__header">Settings</h1>
         <div className="settings__content">
           <SettingsMenu {...props} menuItems={Object.keys(views)} />
-          <SettingsDashboard {...props}>{views[props.view]}</SettingsDashboard>
+          <SettingsDashboard {...props} component={views[props.view]} />
         </div>
       </div>
     </Container>

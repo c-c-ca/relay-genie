@@ -2,7 +2,7 @@ import React from 'react';
 import './AlertCard.scss';
 import { CrossIcon } from '../../ui/icons';
 
-const AlertCard = ({ title, message, onDismiss, children }) => (
+const AlertCard = ({ title, message, onDismiss, buttons, children }) => (
   <div className="alert-card">
     <div className="alert-card__header">
       <div
@@ -16,6 +16,7 @@ const AlertCard = ({ title, message, onDismiss, children }) => (
     <div className="alert-card__content">
       <h2 className="alert-card__title">{title}</h2>
       <p className="alert-card__message">{message}</p>
+      <div className="alert-card__button-wrapper">{buttons}</div>
     </div>
   </div>
 );

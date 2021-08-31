@@ -219,4 +219,17 @@
         inset 11.5rem 0 0 0 $color-red, 0 1rem 2rem rgba(0, 0, 0, 0.2);
     }
   }
+
+  &--disabled {
+    color: $color-grey-dark-2;
+    background-color: $color-white;
+    border: 1px solid $color-grey-dark-2;
+    pointer-events: none;
+
+    &:hover,
+    &:focus {
+      cursor: default;
+      box-shadow: none;
+    }
+  }
 }

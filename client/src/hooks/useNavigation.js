@@ -14,7 +14,12 @@ export const useNavigation = () => {
   const [, selectSettingsView] = useSelectSettingsView();
   const [, toggleSidenavVisibility] = useToggleSidenav();
 
-  const settingsMenuItems = ['account', 'password', 'events', 'notifications'];
+  const settingsMenuItems = [
+    'account',
+    'password',
+    // 'events',
+    // 'notifications'
+  ];
 
   const navItems = {
     default: [

@@ -10,7 +10,7 @@ const { createTemplate, toAnchorTag } = require('./utils');
 const applyTextTemplate = url => `
 Hello,
 
-Thanks for joining ${APP_NAME}!  
+Thanks for joining ${APP_NAME}!
 To verify your email address please copy the link below and paste it in your address bar: ${url}
 `;
 

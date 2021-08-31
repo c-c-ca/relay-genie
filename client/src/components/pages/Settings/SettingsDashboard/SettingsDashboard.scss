@@ -38,72 +38,6 @@
     }
   }
 
-  &__section {
-    padding: 2rem 0;
-    width: 100%;
-
-    &--delete {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-
-      @media only screen and (max-width: $bp-medium) {
-        align-items: flex-start;
-        justify-content: flex-start;
-        flex-direction: column;
-      }
-    }
-
-    @media only screen and (max-width: $bp-large) {
-      padding: 1.5rem 0;
-    }
-
-    @media only screen and (max-width: $bp-small) {
-      width: 100%;
-    }
-  }
-
-  &__section-header {
-    margin-bottom: 2rem;
-
-    @media only screen and (max-width: $bp-small) {
-      width: 100%;
-    }
-  }
-
-  &__section-header-title {
-    font-size: 1.8rem;
-    font-weight: 700;
-    letter-spacing: 0.06rem;
-    line-height: 1.6;
-
-    @media only screen and (max-width: $bp-medium) {
-      font-size: 1.6rem;
-      line-height: 1.4;
-    }
-
-    @media only screen and (max-width: $bp-small) {
-      text-align: center;
-    }
-  }
-
-  &__section-header-sub-title {
-    font-size: 1.3rem;
-    font-weight: 700;
-    letter-spacing: 0.03rem;
-    color: $color-grey-dark;
-    line-height: 1.4;
-
-    @media only screen and (max-width: $bp-medium) {
-      font-size: 1.2rem;
-      margin-top: 0.3rem;
-    }
-
-    @media only screen and (max-width: $bp-small) {
-      text-align: center;
-    }
-  }
-
   &__row {
     padding: 2rem 0;
     width: 100%;
@@ -128,7 +62,8 @@
 
     @media only screen and (max-width: $bp-medium) {
       width: 100%;
-      max-width: 30rem;
+      padding: 0.8rem 0;
+      // max-width: 30rem;
     }
 
     @media only screen and (max-width: $bp-small) {
@@ -190,7 +125,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: $color-grey-dark;
+    color: $color-grey-dark-2;
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     font-size: 1.5rem;

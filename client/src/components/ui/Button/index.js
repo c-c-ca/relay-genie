@@ -2,18 +2,29 @@ import React from 'react';
 import './Button.scss';
 import { Link } from 'react-router-dom';
 
-const Button = ({ text, icon, to, color = 'primary', onClick = () => {} }) => (
+const Button = ({
+  text,
+  icon,
+  to,
+  disabled = false,
+  color = 'primary',
+  onClick = () => {},
+}) => (
   <Link
     to={to}
     component={React.forwardRef((props, ref) => (
       <a
         ref={ref}
+        disabled={disabled}
         {...props}
-        className={`button button--${color}`}
+        className={`button button--${disabled ? 'disabled' : color}`}
         onClick={onClick}
       >
         <div className="button__content">
-          <div className={`button__icon button__icon--${color}`}>{icon}</div>
+          {icon ? (
+            <div className={`button__icon button__icon--${color}`}>{icon}</div>
+          ) : null}
+
           <div className="button__text">{text}</div>
         </div>
       </a>

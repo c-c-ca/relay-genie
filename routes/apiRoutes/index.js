@@ -35,17 +35,16 @@ router.post(
   validateUsername,
   uniqueUsername,
   async (req, res) => {
-    const { username, password, email, strategy, profileId, displayName } =
-      req.body;
+    const { password, email, strategy, profileId, photo, ...names } = req.body;
 
     await Ticket.deleteMany({ email });
 
     req.login(
       await User.register(
         new User({
-          username,
           email,
-          displayName,
+          photo,
+          ...names,
           [`${strategy.toLowerCase()}Profile`]: {
             email,
             profileId,

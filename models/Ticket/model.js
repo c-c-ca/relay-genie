@@ -6,7 +6,9 @@ const ticketSchema = new Schema({
   action: String,
   strategy: String,
   profileId: String,
-  displayName: String,
+  photo: String,
+  firstName: String,
+  lastName: String,
   email: String,
 });
 

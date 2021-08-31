@@ -8,24 +8,19 @@ import {
   LockOpenIcon,
   CheckIcon,
   CrossIcon,
+  AddressCardIcon,
+  PhoneIcon,
 } from '../../ui/icons';
-// import Loader from '../Spinner/Loader/Loader';
+import Loader from '../../ui/Loader';
 
 const ICON_COLOR = 'hsl(20, 89%, 50%)';
 
-const renderIcon = name => {
-  switch (name) {
-    case 'username':
-      return <UserIcon fill={ICON_COLOR} />;
-    case 'email':
-      return <EmailIcon fill={ICON_COLOR} />;
-    case 'password':
-      return <KeyIcon fill={ICON_COLOR} />;
-    case 'confirm':
-      return <LockOpenIcon fill={ICON_COLOR} />;
-    default:
-      return null;
-  }
+const icons = {
+  username: UserIcon,
+  email: EmailIcon,
+  password: KeyIcon,
+  confirm: LockOpenIcon,
+  phone: PhoneIcon,
 };
 
 const renderValid = ({
@@ -63,37 +58,49 @@ const renderError = ({
   );
 
 const renderStatus = meta =>
-  // meta.validating && meta.active ? <Loader /> : renderValid(meta);
-  meta.validating && meta.active ? <div /> : renderValid(meta);
+  meta.validating && meta.active ? <Loader /> : renderValid(meta);
 
-const renderInput = (placeholder, disabled, input, { pristine }) => (
-  <input
-    className={`input ${disabled ? 'input--disabled' : undefined} ${
-      pristine && 'input--pristine'
-    }`}
-    id={placeholder}
-    {...input}
-    placeholder={placeholder}
-    disabled={disabled}
-    type={input.type}
-    autoComplete="off"
-  />
-);
+const renderInput = (placeholder, disabled, input, { pristine }) => {
+  const { name } = input;
+  return (
+    <input
+      {...input}
+      className={`input ${disabled ? 'input--disabled' : undefined} ${
+        pristine && 'input--pristine'
+      } ${icons[name] || 'input--no-icon'} `}
+      id={placeholder}
+      placeholder={placeholder}
+      disabled={disabled}
+      type={input.type}
+      autoComplete="off"
+    />
+  );
+};
+const Input = ({ placeholder, label, disabled, input, meta, description }) => {
+  const { name } = input;
+  const Icon = icons[name];
 
-const Input = ({ placeholder, label, disabled, input, meta, touched }) => (
-  <div className="field-wrapper">
-    <label className="label" htmlFor={placeholder}>
-      {label || placeholder}
-    </label>
-    <div className="input-wrapper">
-      <div>
-        <div className="icon-wrapper--left">{renderIcon(input.name)}</div>
-        <div className="icon-wrapper--right">{renderStatus(meta)}</div>
-        {renderInput(placeholder, disabled, input, meta)}
+  return (
+    <div className="field-wrapper">
+      <div className="input__header">
+        <label className="input__label" htmlFor={placeholder}>
+          {label || placeholder}
+        </label>
+        <div className="input__description">{description}</div>
       </div>
+      <div className="input__wrapper">
+        <div>
+          {Icon ? (
+            <div className="icon-wrapper--left">
+              <Icon fill={ICON_COLOR} />
+            </div>
+          ) : null}
+          <div className="icon-wrapper--right">{renderStatus(meta)}</div>
+          {renderInput(placeholder, disabled, input, meta)}
+        </div>
+      </div>
+      {renderError(meta)}
     </div>
-    {renderError(meta)}
-  </div>
-);
-
+  );
+};
 export default Input;
